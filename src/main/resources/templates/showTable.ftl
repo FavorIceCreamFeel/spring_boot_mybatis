@@ -3,6 +3,9 @@
     <title>显示</title>
 </head>
 <body>
+<span>用户名:${hashMap.userName!"请登录"}</span>
+<a href="/logout">退出</a>
+<a href="/Home/list">123</a>
     <table>
         <tr>
             <th>姓名</th>
@@ -21,8 +24,10 @@
         </tr>
         </#list>
     </table>
-    <a href="/Home/list">123</a>
-    <span>用户名:${hashMap.userName!"请登录"}</span>
-<a href="/logout">退出</a>
+<form action="/file/upload" method="post" enctype="multipart/form-data">
+    头像：<input type="file" name="filename"><br/>
+    <input id="b1" type="submit" value="提交">
+</form>
+
 </body>
 </html>

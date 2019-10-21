@@ -5,7 +5,11 @@ spring:
       password: 150938
     url: jdbc:mysql://localhost:3306/security?useUnicode=true&characterEncoder=utf8
     driver-class-name: com.mysql.jdbc.Driver
-
+#    文件上传与下载
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 
 pagehelper:
   helper-dialect: mysql
