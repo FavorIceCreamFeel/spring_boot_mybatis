@@ -1,21 +1,3 @@
 spring:
-  datasource:
-    hikari:
-      username: root
-      password: 150938
-    url: jdbc:mysql://localhost:3306/security?useUnicode=true&characterEncoder=utf8
-    driver-class-name: com.mysql.jdbc.Driver
-#    文件上传与下载
-  servlet:
-    multipart:
-      max-file-size: 10MB
-      max-request-size: 10MB
-
-pagehelper:
-  helper-dialect: mysql
-  reasonable: true
-  support-methods-arguments: true
-  params: count=countSql
-
-server:
-  port: 8080
+  profiles:
+    active: prod
