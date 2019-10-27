@@ -5,6 +5,8 @@ import com.github.pagehelper.PageInfo;
 import com.smxr.dao.StudentDao;
 import com.smxr.pojo.Student;
 import com.smxr.service.StudentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -23,6 +25,7 @@ import java.util.List;
  */
 @Service
 public class StudentServiceImpl implements StudentService{
+    private static Logger logger = LoggerFactory.getLogger(StudentService.class);
     @Autowired
     private StudentDao studentDao;
     @Autowired
@@ -37,8 +40,13 @@ public class StudentServiceImpl implements StudentService{
 
     @Override
     public boolean insertStudent(Student student) {
+        logger.info("用户注册====》start：");
         student.setPwd(passwordEncoder.encode(student.getPwd()));
         boolean boo = studentDao.insertStudent(student)==1?true:false;
+        if (boo)
+            logger.info("注册成功");
+        else
+            logger.info("注册失败");
         return boo;
     }
 
@@ -81,8 +89,8 @@ public class StudentServiceImpl implements StudentService{
         student2.setUserName("liu");
         Student student3 = studentDao.queryStudentByTest(student1);
         Student student4 = studentDao.queryStudentByTest(student2);
-        System.out.println(student3);
-        System.out.println(student4);
+        logger.info("测试接口数据1："+student3);
+        logger.info("测试接口数据2："+student4);
         ArrayList<Student> students = new ArrayList<>();
         students.add(student3);
         students.add(student4);

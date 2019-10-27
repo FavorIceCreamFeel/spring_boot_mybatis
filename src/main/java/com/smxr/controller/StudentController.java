@@ -53,7 +53,9 @@ public class StudentController {
     @RequestMapping("/Test")
     @ResponseBody
     public ArrayList queryByTest(){
+        logger.info("测试动态SQL接口====》start：");
         ArrayList<Student> students = studentService.queryStudentByTest();
+        logger.info("测试结束======》end：");
         return students;
     }
 }
