@@ -16,13 +16,16 @@ public class RandomGetString {
      * 获取指定长度的随机字符串
      */
     public static String getRandomString(int length){
+        logger.info("获取长度为"+length+"的随机字符串");
         String str="qwertyuioplkjhgfdsazxcvbnm"+"0123456789";
+        logger.info("随机基本字符串库："+str);
         Random random = new Random();
         StringBuilder stringBuilder = new StringBuilder();
         for (int i=0; i<length;i++) {
             int i1 = random.nextInt(str.length());
             stringBuilder.append(str.charAt(i1));
         }
+        logger.info("得到长度为"+length+"的随机字符串："+stringBuilder.toString());
         return stringBuilder.toString();
     }
 }
