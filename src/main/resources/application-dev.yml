@@ -1,5 +1,5 @@
 spring:
-
+#开发时的数据源配置
   datasource:
     hikari:
       username: root
@@ -7,19 +7,21 @@ spring:
     url: jdbc:mysql://localhost:3306/security?useUnicode=true&characterEncoder=utf-8
     driver-class-name: com.mysql.jdbc.Driver
 #    文件上传与下载
-  servlet:
-    multipart:
-      max-file-size: 10MB
-      max-request-size: 10MB
+#  servlet:
+#    multipart:
+#      max-file-size: 10MB
+#      max-request-size: 10MB
 
-pagehelper:
-  helper-dialect: mysql
-  reasonable: true
-  support-methods-arguments: true
-  params: count=countSql
+#pagehelper:
+#  helper-dialect: mysql
+#  reasonable: true
+#  support-methods-arguments: true
+#  params: count=countSql
 
+#开发时的端口号
 server:
   port: 8080
-logging:
-  config:
-    classpath:logback-spring.xml
+
+#logging:
+#  config:
+#    classpath:logback-spring.xml

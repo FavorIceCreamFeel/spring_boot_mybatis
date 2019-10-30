@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
     <!-- 存放日志文件的目录         文件位置在项目文件log目录下 没有目录会自动创建-->
@@ -31,7 +32,6 @@
 
     <!-- prod 环境下  -->
     <springProfile name="prod">
-    <!--<springProfile name="dev">-->
         <!-- 文件保存日志 -->
         <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
             <file>${LOG_HOME}/${PREFIX}.${SUFFIX}</file>

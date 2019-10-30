@@ -1,3 +1,18 @@
 spring:
   profiles:
-    active: prod
+    active: dev
+#文件上传与下载
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+#分页助手
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+#日志配置
+logging:
+  config:
+    classpath:logback-spring.xml
